@@ -1,0 +1,23 @@
+<!-- 
+	Mybatis의 SQL 처리 방식 중 XML 방식
+	
+	주로 SQL이 복잡하거나 길어지는 경우 어노테이션 보다는 XML을 이용한다.
+	
+	src/main/resources구조에 폴더를 생성하여 작성하거나, Mapper 인터페이스가 있는 곳에 같이 작성한다.
+
+	Mybatis는 이름과 namespace속성값을 가지고 판단하기 때문에 Mapper 인터페이스와 XML이 둘다 존재한다면 이를 병합하여 처리한다.
+	
+	따라서 getTime2는 메서드 선언은 인터페이스에 존재하고 SQL에 대한 처리는 XML을 이용하는 방식이다.
+	
+	<select> 태그의 id 속성 값은 메서드 이름과 동일하게, resultType는 인터페이스에 메서드의 리턴 타입과 동일하게 작성해야 한다.	
+ -->
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.TimeMapper">
+	<select id="getTime2" resultType="string">
+		SELECT sysdate FROM dual
+	</select>
+</mapper>
