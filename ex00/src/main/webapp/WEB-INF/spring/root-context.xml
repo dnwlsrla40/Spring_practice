@@ -13,7 +13,7 @@
 			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 			<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
 			<property name="username" value="book_ex"></property>
-			<property name="password" value="woo090430"></property>
+			<property name="password" value="비밀번호"></property>
 		</bean>
 		
 		<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
